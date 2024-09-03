@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .calc{
+            padding: 40px;
+            width: 50%;
+            margin: auto;
+        }
+        #min-calc{
+            display: flex;
+        }
+        #min-calc > div{
+            width: 100%;
+            text-align: center;
+            
+        }
+        div > label{
+           font-size: larger;
+           color: green;
+           font-weight: 900;
+        }
+        div > input[type="text"]{
+            width: 80%;
+            padding: 10px;
+            margin: 10px 20px;
+        }
+        #btns{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        #btns > button{
+            width: 100px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+    <form>
+       <div id="min-calc">
+
+        <div id="fname_div">
+            <h1>calculates BMI (Body Mass Index)</h1>
+
+        <label for="">Weight in KGs</label><br>
+        <input id="firstNum" type="text" placeholder="Enter your first number">
+        </div>
+
+        <div id="sname_div">
+        <label for="">Height in Meters</label><br>
+        <input id="secondNum" type="text" placeholder="Enter your second number">
+        </div>
+
+       </div>
+       <div id="btns">
+        <button id="BMI" onclick="BMICalc()">Body Mass Index</button>
+        </div>
+
+        <div id="result">
+            Result: <h1 id="result_num"></h1>
+        </div>
+    </form>
+    </div>
+  
+
+</body>
+<script>
+    let firstNumber = document.getElementById("firstNum");
+    let secondNumber = document.getElementById("secondNum");
+
+    let BMI = document.getElementById("BMI");
+
+    let resultAns = document.getElementById("result_num");
+
+    
+
+
+
+function BMICalc()
+{ 
+    
+    event.preventDefault()
+    let weight = firstNumber.value;
+   let height = secondNumber.value;
+  
+   let bmiValue = Number(weight) / Number(height * height)
+    alert(bmiValue);
+    resultAns.innerText = bmiValue;
+}
+
+
+</script>
+</body>
+</html>

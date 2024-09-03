@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .calc{
+            padding: 40px;
+            width: 50%;
+            margin: auto;
+        }
+        #min-calc{
+            display: flex;
+        }
+        #min-calc > div{
+            width: 100%;
+            text-align: center;
+            
+        }
+        div > label{
+           font-size: larger;
+           color: green;
+           font-weight: 900;
+        }
+        div > input[type="text"]{
+            width: 80%;
+            padding: 10px;
+            margin: 10px 20px;
+        }
+        #btns{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        #btns > button{
+            width: 100px;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="calc">
+    <form>
+       <div id="min-calc">
+
+        <div id="fname_div">
+        <label for="">First Number</label><br>
+        <input id="firstNum" type="text" placeholder="Enter your first number">
+        </div>
+
+        <div id="sname_div">
+        <label for="">Second Number</label><br>
+        <input id="secondNum" type="text" placeholder="Enter your second number">
+        </div>
+
+       </div>
+       <div id="btns">
+        <button id="add" onclick="calc()">Add</button>
+        <button id="sub" onclick="calc()">Submit</button>
+        <button id="divide" onclick="calc()">Divide</button>
+        <button id="multiply" onclick="calc()">Multiply</button>
+        </div>
+
+        <div id="result">
+            Result: <h1 id="result_num"></h1>
+        </div>
+    </form>
+    </div>
+  
+
+</body>
+<script>
+    let firstNumber = document.getElementById("firstNum");
+    let secondNumber = document.getElementById("secondNum");
+
+    let add = document.getElementById("add");
+    let sub = document.getElementById("sub");
+    let divide = document.getElementById("add");
+    let multiply = document.getElementById("add");
+
+    let resultAns = document.getElementById("result_num");
+
+    
+
+function calc(){ 
+    event.preventDefault()
+     firstValue = firstNumber.value;
+     secondValue = secondNumber.value;
+    alert(firstValue+secondValue)
+
+    addition()
+   /* subtraction()
+    division()
+    multiplication()*/
+    
+}
+
+function addition(){
+    let Addition = Number(firstValue)+Number(secondValue);
+    alert(Addition);
+    resultAns.innerText = Addition;
+}
+
+function subtraction(){
+    let subtraction = Number(firstValue)-Number(secondValue);
+    alert(subtraction);
+    resultAns.innerText = subtraction;
+}
+
+function division(){
+    let Division = Number(firstValue)+Number(secondValue);
+    alert(Division);
+    resultAns.innerText = Division;
+}
+
+function multiplication(){
+    let Multiplication = Number(firstValue)+Number(secondValue);
+    alert(Multiplication);
+    resultAns.innerText = Multiplication;
+}
+</script>
+</body>
+</html>
