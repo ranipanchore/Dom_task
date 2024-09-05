@@ -18,8 +18,16 @@ loginForm.addEventListener("submit", function(){
  let loginDataMatch = false;
 
     for(let i=0; i<signupData.length; i++){
-        if(email === signupData[i].email && password === signupData[i].password){
-            loginDataMatch = true;
+        if(email === signupData[i].email){
+            if(password === signupData[i].password)
+            {
+                loginDataMatch = true;
+              localStorage.setItem('loginUser', JSON.stringify(signupData[i].fname));
+              console.log( localStorage.setItem('loginUser', JSON.stringify(signupData[i].fname)))
+            }else{
+                loginDataMatch = "wrong password";
+                alert(loginDataMatch);
+            }
         }
     }
 
